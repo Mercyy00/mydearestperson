@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Will You Be My Forever?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fbe1e1;
+      text-align: center;
+      color: #333;
+    }
+
+    /* Main Wrapper */
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Title and Big Question */
+    h1 {
+      font-size: 48px;
+      color: #d56c8d;
+      margin-top: 50px;
+    }
+
+    h2 {
+      font-size: 36px;
+      color: #ff86b1;
+      margin-top: 20px;
+    }
+
+    /* Heart animation */
+    .hearts {
+      font-size: 100px;
+      animation: heartAnim 1s infinite alternate;
+    }
+
+    @keyframes heartAnim {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.1); }
+    }
+
+    /* Button Styles */
+    .button {
+      background-color: #ff86b1;
+      color: white;
+      padding: 15px 30px;
+      margin: 20px;
+      border: none;
+      border-radius: 30px;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #d56c8d;
+    }
+
+    /* Sarcastic Button Styles */
+    .sarcastic-btn {
+      background-color: #f39c12;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 30px;
+      font-size: 20px;
+      margin: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .sarcastic-btn:hover {
+      background-color: #e67e22;
+    }
+
+    /* Confetti effect */
+    .confetti {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 9999;
+      display: none;
+    }
+
+    /* Footer Text */
+    footer {
+      font-size: 18px;
+      margin-top: 20px;
+      color: #999;
+    }
+
+    footer a {
+      color: #ff86b1;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Benefits Page Styles */
+    #benefits-page {
+      display: none;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .next-btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 30px;
+      font-size: 20px;
+      margin: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .next-btn:hover {
+      background-color: #45a049;
+    }
+
+    /* Gift Box Styles */
+    .gift-box-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 40px;
+    }
+
+    .gift-box {
+      width: 200px;
+      height: 200px;
+      background-color: #f0e68c;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.5s ease, height 0.5s ease;
+    }
+
+    .gift-box:hover {
+      transform: scale(1.05);
+    }
+
+    .gift-box p {
+      font-size: 20px;
+      color: #d56c8d;
+      font-weight: bold;
+    }
+
+    .gift-lid {
+      position: absolute;
+      background-color: #d56c8d;
+      width: 100%;
+      height: 40%;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      transition: transform 0.5s ease;
+      z-index: 2;
+    }
+
+    /* Hidden Tulips */
+    .tulips {
+      display: none;
+      font-size: 50px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: tulipAnim 3s forwards;
+    }
+
+    @keyframes tulipAnim {
+      0% {
+        opacity: 0;
+        transform: translateY(50px) translateX(-50%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) translateX(-50%);
+      }
+    }
+
+    .tulip-text {
+      font-size: 24px;
+      color: #ff86b1;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Will You Be My Forever?</h1>
+    <h2>(Not that you have a choice, of course!)</h2>
+
+    <!-- Heart Animation -->
+    <div class="hearts">❤️</div>
+
+    <p>Okay, I know, you might be thinking... 'What if I say no?' But, let's be real—there's really only one answer here. I mean, it’s me! So just go ahead and click YES. I’m not taking 'no' for an answer anyway. 😉</p>
+
+    <!-- Yes buttons -->
+    <button class="button" onclick="showConfettiAndBenefits()">YES, obviously!</button>
+    <button class="sarcastic-btn" onclick="showConfettiAndBenefits()">YES... but only because you're so cute 😍</button>
+    <button class="sarcastic-btn" onclick="showConfettiAndBenefits()">There’s no ‘no’ here, right? Yes, I’m saying YES!</button>
+    <button class="sarcastic-btn" onclick="showConfettiAndBenefits()">YES... because you’ve got me wrapped around your finger. 😂</button>
+
+    <!-- Confetti Effect -->
+    <div id="confetti" class="confetti"></div>
+
+    <footer>
+      <p>P.S. No matter how many times you try to say 'no', I will only accept 'yes.' Just sayin'. 😘</p>
+    </footer>
+  </div>
+
+  <!-- Benefits Page -->
+  <div id="benefits-page">
+    <h1>Benefits of Dating Me</h1>
+    <h2>Why I'm the perfect choice</h2>
+    <ul style="list-style-type:none; padding: 0;">
+      <li>✔ I’ll always make you laugh with my sarcasm and charm.</li>
+      <li>✔ I know how to treat you like the queen you are.</li>
+      <li>✔ I will never leave you on read (unless it’s intentional, of course 😜).</li>
+      <li>✔ We’ll create memories together that no one can take away.</li>
+      <li>✔ I’ll always have your back, no matter what.</li>
+    </ul>
+    <p>And just so you know... I’ll marry you one day. But no pressure. 😉</p>
+
+    <!-- Gift Box Section -->
+    <div class="gift-box-wrapper">
+      <div class="gift-box" onclick="openGiftBox()">
+        <div class="gift-lid" id="gift-lid"></div>
+        <p>Click for a surprise gift! 🎁</p>
+      </div>
+
+      <!-- Tulips Pop-up -->
+      <div id="tulips" class="tulips">
+        🌷🌷🌷
+        <div class="tulip-text">Phool for my phool! 💖</div>
+      </div>
+    </div>
+
+    <button class="next-btn" onclick="endPage()">The End... For Now!</button>
+  </div>
+
+  <script>
+    // Function to show confetti and the benefits page when the user clicks YES
+    function showConfettiAndBenefits() {
+      // Show confetti
+      const confetti = document.getElementById('confetti');
+      confetti.style.display = 'block';
+      setTimeout(() => {
+        confetti.style.display = 'none';
+      }, 3000);
+
+      // Hide the initial page
+      document.querySelector('.container').style.display = 'none';
+
+      // Show the benefits page
+      const benefitsPage = document.getElementById('benefits-page');
+      benefitsPage.style.display = 'block';
+    }
+
+    // Function to open the gift box and reveal tulips
+    function openGiftBox() {
+      const lid = document.getElementById('gift-lid');
+      lid.style.transform = 'translateY(-100%)'; // Animate lid opening
+      const tulips = document.getElementById('tulips');
+      tulips.style.display = 'block'; // Show tulips
+    }
+
+    // Function to end the page
+    function endPage() {
+      alert("Just remember, one day I'll marry you. 😉💍");
+    }
+  </script>
+
+</body>
+</html>
